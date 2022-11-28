@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-commerce UI product card design</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+</head>
+<body>
+    <div class="card-container">
+
+        <div class="card">
+
+            <div class="image">
+                <img src="images/1.png">
+            </div>
+
+            <div class="content">
+                <h3 class="title">NIKE Shoes</h3>
+                <ul class="size">
+                    <span> Size: </span>
+
+                    <li class="active">07</li>
+                    <li>08</li>
+                    <li>09</li>
+                    <li>10</li>
+                </ul>
+                <div class="price"> $500/-  <span> $700/-</span></div>
+                <a href="#"><button class="btn">Add to Cart</button></a>
+            </div>
+            <!---->
+            <div class="icons">
+               <a href="#" class="fas fa-heart"></a>
+               <a href="#" class="fas fa-share"></a>
+               <a href="#" class="fas fa-search"></a>
+            </div>
+            <!---->
+            <div class="colors">
+                <span class="active" style="background: #d63031;" data-image="images/1.png"></span>
+                <span style="background: #dfe6e9;" data-image="images/2.png"></span>
+                <span style="background: #2980b9;" data-image="images/3.png"></span>
+                <span style="background: #2d3436;" data-image="images/4.png"></span>
+                <span style="background: #fa983a;" data-image="images/5.png"></span>
+            </div>
+        </div>
+       
+    </div>
+    <!---------->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+    <!---->
+    <script>
+        $(document).ready(function(){
+
+            $('.size li').click(function(){
+
+                $(this).addClass('active').siblings().removeClass('active');
+            });
+
+            $('.colors span').click(function(){
+
+                $(this).addClass('active').siblings().removeClass('active');
+
+                let image = $(this).attr('data-image');
+                $('.image img').attr('src',image);
+            });
+
+        });
+    </script>
+</body>
+</html>
